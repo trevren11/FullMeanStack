@@ -1,0 +1,12 @@
+
+> comment@0.0.0 start /home/bitnami/code/FullMeanStack
+> node ./bin/www
+
+[0mGET / [36m304 [0m9.366 ms - -[0m
+[0mGET /javascripts/app.js [36m304 [0m2.382 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.697 ms - -[0m
+[0mGET /comments [36m304 [0m19.933 ms - -[0m
+[0mGET / [36m304 [0m2.075 ms - -[0m
+[0mGET /javascripts/app.js [36m304 [0m1.001 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.979 ms - -[0m
+[0mGET /comments [36m304 [0m4.045 ms - -[0m

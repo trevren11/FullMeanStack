@@ -38,4 +38,10 @@ router.put('/comments/:comment/upvote', function(req, res, next) {
     res.json(comment);
   });
 });
+
+router.delete('/comments/:comment', function(req, res) {
+  console.log("in Delete");
+  req.comment.remove();
+  res.json(req.comment);
+});
 module.exports = router;
