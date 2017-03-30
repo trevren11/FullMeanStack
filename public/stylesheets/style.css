@@ -18,3 +18,7 @@ h1, div {
 button {
   color: black;
 }
+
+table {
+  cursor: pointer;
+}

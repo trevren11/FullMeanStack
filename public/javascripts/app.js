@@ -4,8 +4,7 @@ angular.module('comment', [])
     function ($scope, $http) {
       $scope.comments = [];
       $scope.addComment = function () {
-        var dt = new Date();
-        var date = dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
+        var date = $('#datepicker').val();
         var newcomment = { title: $scope.formContent, upvotes: 0, a: false, b: false, c: false, d: false, e: false, f: false, date: date };
         $scope.formContent = '';
         $http.post('/comments', newcomment).success(function (data) {
