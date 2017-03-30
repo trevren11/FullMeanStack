@@ -5,7 +5,16 @@ angular.module('comment', [])
       $scope.comments = [];
       $scope.addComment = function () {
         var date = $('#datepicker').val();
-        var newcomment = { title: $scope.formContent, upvotes: 0, a: false, b: false, c: false, d: false, e: false, f: false, date: date };
+        var newcomment = {
+          title: $scope.formContent, upvotes: 0,
+          a: $('#optA').is(':checked'),
+          b: $('#optB').is(':checked'),
+          c: $('#optC').is(':checked'),
+          d: $('#optD').is(':checked'),
+          e: $('#optE').is(':checked'),
+          f: $('#optF').is(':checked'),
+          date: date
+        };
         $scope.formContent = '';
         $http.post('/comments', newcomment).success(function (data) {
           $scope.comments.push(data);

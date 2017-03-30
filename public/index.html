@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Comments</title>
+  <title>Fitness History</title>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -20,14 +20,32 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="page-header">
-        <h1>Comments </h1>
+        <h1>History </h1>
       </div>
 
       <form ng-submit="addComment()" style="margin-top:30px;">
         <p>Date: <input class="form-control" required type="text" id="datepicker"></p>
+        <!--TODO remove this-->
         <input type="text" class="form-control" ng-model="formContent"></input>
-        <!--need date picker then radio buttons for the rest of the inputs-->
-        <button type="submit">Add Comment</button>
+        <div class="checkbox">
+          <label><input type="checkbox"  name="optradio" id=optA>Option A</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox"  name="optradio" id=optB>Option B</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox"  name="optradio" id=optE>Option C</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox"  name="optradio" id=optD>Option D</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox"  name="optradio" id=optE>Option E</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox"  name="optradio" id=optF>Option F</label>
+        </div>
+        <button class="btn btn-success" type="submit">Submit Entry</button>
       </form>
       <div>
         {{test}}
