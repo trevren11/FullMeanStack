@@ -24,10 +24,14 @@
         {{test}}
       </div>
       <div ng-repeat="comment in comments | orderBy: '-upvotes'">
-        
+
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span> {{comment.title}} - upvotes:
         {{comment.upvotes}}
         <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>
+        <span>{{comment.a}} - a</span>
+        <span>{{comment.b}} - b</span>
+        <span>{{comment.c}} - c</span>
+        <span>{{comment.d}} - d</span>
       </div>
     </div>
   </div>
