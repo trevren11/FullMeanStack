@@ -24,9 +24,7 @@
       </div>
 
       <form ng-submit="addComment()" style="margin-top:30px;">
-        <p>Date: <input class="form-control" required type="text" id="datepicker"></p>
-        <!--TODO remove this-->
-        <input type="text" class="form-control" ng-model="formContent"></input>
+        <p>Date: <input class="form-control" required type="text" id="datepicker" ng-model="formContent"></p>
         <div class="checkbox">
           <label><input type="checkbox"  name="optradio" id=optA>Option A</label>
         </div>
@@ -34,7 +32,7 @@
           <label><input type="checkbox"  name="optradio" id=optB>Option B</label>
         </div>
         <div class="checkbox">
-          <label><input type="checkbox"  name="optradio" id=optE>Option C</label>
+          <label><input type="checkbox"  name="optradio" id=optC>Option C</label>
         </div>
         <div class="checkbox">
           <label><input type="checkbox"  name="optradio" id=optD>Option D</label>
@@ -77,7 +75,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="comment in comments | orderBy: '-upvotes'" id="{{comment._id}}">
+          <tr ng-repeat="comment in comments | orderBy: 'date'" id="{{comment._id}}">
             <td>{{comment.date}}</td>
             <td><input type="checkbox" id="{{comment._id}}a" value="1" ng-checked="comment.a"></td>
             <td><input type="checkbox" id="{{comment._id}}b" value="1" ng-checked="comment.b"></td>

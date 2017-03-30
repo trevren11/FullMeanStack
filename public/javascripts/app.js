@@ -6,7 +6,6 @@ angular.module('comment', [])
       $scope.addComment = function () {
         var date = $('#datepicker').val();
         var newcomment = {
-          title: $scope.formContent, upvotes: 0,
           a: $('#optA').is(':checked'),
           b: $('#optB').is(':checked'),
           c: $('#optC').is(':checked'),
