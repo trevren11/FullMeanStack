@@ -8,8 +8,13 @@ var CommentSchema = new mongoose.Schema({
   f: Boolean,
   date: String,
 });
-CommentSchema.methods.upvote = function (cb) {
-  this.upvotes += 1;
+CommentSchema.methods.update = function (cb, comment) {
+  this.a = comment.a;
+  this.b = comment.b;
+  this.c = comment.c;
+  this.d = comment.d;
+  this.e = comment.e;
+  this.f = comment.f;
   this.save(cb);
 };
 mongoose.model('Comment', CommentSchema);

@@ -19,13 +19,6 @@ angular.module('comment', [])
           $scope.comments.push(data);
         });
       };
-      $scope.upvote = function (comment) {
-        return $http.put('/comments/' + comment._id + '/upvote')
-          .success(function (data) {
-            console.log("upvote worked");
-            comment.upvotes = data.upvotes;
-          });
-      };
       $scope.incrementUpvotes = function (comment) {
         $scope.upvote(comment);
       };
@@ -42,6 +35,28 @@ angular.module('comment', [])
             console.log("delete worked");
           });
         $scope.getAll();
+      };
+
+      $scope.update = function (comment) {
+        // I could try to figure out how to bind this stuff but whatever
+        comment.a = document.getElementById(comment._id + "a").checked
+        comment.b = document.getElementById(comment._id + "b").checked
+        comment.c = document.getElementById(comment._id + "c").checked
+        comment.d = document.getElementById(comment._id + "d").checked
+        comment.e = document.getElementById(comment._id + "e").checked
+        comment.f = document.getElementById(comment._id + "f").checked
+        return $http.post('/comments/' + comment._id + '/update', comment).then(function (data) {
+          console.log("update succesfull");
+          comment = data;
+        }, function (data) {
+          console.log("error trying to update");
+        });
+        return $http.put('/comments/' + comment._id + '/update')
+          .success(function (data) {
+            console.log("update worked");
+            console.log(data);
+            comment = data;
+          });
       };
     }
   ]);

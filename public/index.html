@@ -45,21 +45,6 @@
         </div>
         <button class="btn btn-success" type="submit">Submit Entry</button>
       </form>
-      <div>
-        {{test}}
-      </div>
-      <div ng-repeat="comment in comments | orderBy: '-upvotes'">
-
-        <span>{{comment.date}} - date</span>
-        <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span> {{comment.title}} - upvotes:
-        {{comment.upvotes}}
-        <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>
-        <span>{{comment.a}} - a</span>
-        <span>{{comment.b}} - b</span>
-        <span>{{comment.c}} - c</span>
-        <span>{{comment.d}} - d</span>
-      </div>
-
       <table class="table table-hover">
         <thead>
           <tr>
@@ -83,7 +68,7 @@
             <td><input type="checkbox" id="{{comment._id}}d" value="1" ng-checked="comment.d"></td>
             <td><input type="checkbox" id="{{comment._id}}e" value="1" ng-checked="comment.e"></td>
             <td><input type="checkbox" id="{{comment._id}}f" value="1" ng-checked="comment.f"></td>
-            <td>Update</td>
+            <td ng-click="update(comment)">Update</td>
             <td> <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span></td>
           </tr>
         </tbody>
