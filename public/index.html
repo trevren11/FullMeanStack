@@ -25,6 +25,7 @@
       </div>
       <div ng-repeat="comment in comments | orderBy: '-upvotes'">
 
+        <span>{{comment.date}} - date</span>
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span> {{comment.title}} - upvotes:
         {{comment.upvotes}}
         <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>
@@ -33,6 +34,32 @@
         <span>{{comment.c}} - c</span>
         <span>{{comment.d}} - d</span>
       </div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="comment in comments | orderBy: '-upvotes'">
+            <td>{{comment.date}}</td>
+            <td>{{comment.a}}</td>
+            <td>{{comment.b}}</td>
+            <td>{{comment.c}}</td>
+            <td>{{comment.d}}</td>
+            <td>{{comment.e}}</td>
+            <td>{{comment.f}}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </body>
